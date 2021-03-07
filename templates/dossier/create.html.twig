@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% form_theme formDossier 'bootstrap_4_layout.html.twig' %}
+
+{% block body %}
+    <br> <br>
+<h1> création d'un dossier</h1>
+    <br> <br>
+
+
+{{ form_start(formDossier) }}
+{{ form_widget(formDossier) }}
+
+
+<button type="submit" class="btn btn-success" > Ajouter le dossier</button>
+    {{ form_end(formDossier) }}
+
+{% endblock %}
