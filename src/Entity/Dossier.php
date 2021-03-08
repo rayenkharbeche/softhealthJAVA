@@ -25,6 +25,11 @@ class Dossier
      */
     private $fichiers;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $description;
+
     public function __construct()
     {
         $this->fichiers = new ArrayCollection();
@@ -67,6 +72,18 @@ class Dossier
     public function __toString()
     {
         return (string) $this->getId();
+    }
+
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
+    public function setDescription(?string $description): self
+    {
+        $this->description = $description;
+
+        return $this;
     }
 
 }

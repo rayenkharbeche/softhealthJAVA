@@ -124,7 +124,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public" />
+    <property name="last_opened_file_path" value="$USER_HOME$/synfony/Gestion-commerciale-symfony-4" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -146,6 +146,7 @@
       <workItem from="1614855338454" duration="17532000" />
       <workItem from="1614881783746" duration="13673000" />
       <workItem from="1614942602547" duration="6933000" />
+      <workItem from="1615139107988" duration="3527000" />
     </task>
     <servers />
   </component>
@@ -165,9 +166,9 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="530" y="185" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1600.860@0.0.1600.860" timestamp="1614896577766" />
-    <state x="602" y="289" width="440" height="315" key="FileChooserDialogImpl" timestamp="1614942691115">
+    <state x="602" y="289" width="440" height="315" key="FileChooserDialogImpl" timestamp="1615143547627">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="602" y="289" width="440" height="315" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1614942691115" />
+    <state x="602" y="289" width="440" height="315" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1615143547627" />
   </component>
 </project>
