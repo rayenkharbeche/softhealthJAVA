@@ -9,19 +9,23 @@
         <thead style="backgournd: #efefef;"> <!-- hedhi yaani table headers -->
         <tr>
             <th>id</th>
+            <th>description</th>
+            <th>date de creation</th>
+            <th>fichiers</th>
             <th>update</th>
             <th>remove</th>
         </tr>
         </thead>
         <tbody> <!-- table body -->
-        <form method="post" action="{{ path('recherche') }}">
-        <label>Rechercher</label>
-        <input type="text" name="search"> <input type="submit"value="Recherche">
-        </form>
+
         <br> <br> <br> <br>
         {% for c in dossiers %}
             <tr>
                 <td> {{ c.id}}</td>
+                <td> {{ c.description}}</td>
+                <td> {{ c.dateCreation |date() }}</td>
+
+                <td><a href="{{ path('fichier_show') }}">fichiers</a></td>
                 <td><a href="{{ path('edit_dossier',{'id':c.id}) }}">update</a></td>
                 <td><a href="{{ path('remove_dossier',{'id':c.id}) }}">Remove</a></td>
             </tr>

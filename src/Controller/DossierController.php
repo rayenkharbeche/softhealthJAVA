@@ -9,6 +9,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Validator\Constraints\DateTime;
 
 class DossierController extends AbstractController
 {
@@ -50,6 +51,8 @@ class DossierController extends AbstractController
         $dossier=new Dossier();
         $form=$this->createForm(DossierType::class,$dossier);
         $form->handleRequest($request);
+         $dossier->setDateCreation(new \DateTime('now'));
+
 
         if($form->isSubmitted() && $form->isValid()){
             $em=$this->getDoctrine()->getManager();
@@ -78,13 +81,14 @@ class DossierController extends AbstractController
         }
         return $this->render('dossier/UpdateDoc.html.twig', ['form' => $form->createView()]);}
 
-        /**
-         * @Route("dossier/recherche", name="recherche")
-         */
-        function Recherche(DossierRepository $repository,Request $request)
-        {
-            $data=$request->get('search');
-            $dossier=$repository->findBy(['id'=>$data]);
-            return $this->render('dossier/ShowDoc.html.twig', array("dossiers" => $dossier));
-        }
+       // /**
+        // * @Route("dossier/recherche", name="recherche")
+       //  */
+       // function Recherche(DossierRepository $repository,Request $request)
+        //{
+         //   $data=$request->get('search');
+          //  $dossier=$repository->findBy(['id'=>$data]);
+          //  return $this->render('dossier/ShowDoc.html.twig', array("dossiers" => $dossier));
+       // }
+
 }

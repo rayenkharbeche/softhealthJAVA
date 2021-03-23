@@ -10,19 +10,19 @@
         <tr>
             <th>id</th>
             <th>description</th>
-            <th>image</th>
             <th>dossier</th>
             <th>update</th>
             <th>remove</th>
         </tr>
         </thead>
         <tbody> <!-- table body -->
+
         {% for c in fichiers %}
             <tr>
                 <td> {{ c.id}}</td>
                 <td> {{ c.description}}</td>
-                <td> {{ c.image}}</td>
-                <td> {{ c.dossier.id}}</td>
+
+                <td> {{ c.dossier.id|default(0)}}</td>
 
                 <td><a href="{{ path('edit_fichier',{'id':c.id}) }}">update</a></td>
                 <td><a href="{{ path('remove_fichier',{'id':c.id}) }}">Remove</a></td>

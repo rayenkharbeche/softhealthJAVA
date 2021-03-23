@@ -1,7 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:Dhekra-Ama" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="ab381145-c06b-4013-831f-8629359869b6" name="Default Changelist" comment="" />
+    <list default="true" id="ab381145-c06b-4013-831f-8629359869b6" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/services.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20210304114546.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/DossierController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/DossierController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/FichierController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/FichierController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Dossier.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Dossier.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Fichier.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Fichier.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/DossierType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/DossierType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/FichierType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/FichierType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/dossier/ShowDoc.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dossier/ShowDoc.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/dossier/create.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dossier/create.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/fichier/ShowFich.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/fichier/ShowFich.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/fichier/UpdateFich.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/fichier/UpdateFich.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/fichier/create.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/fichier/create.html.twig" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,6 +48,9 @@
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -147,28 +188,60 @@
       <workItem from="1614881783746" duration="13673000" />
       <workItem from="1614942602547" duration="6933000" />
       <workItem from="1615139107988" duration="3527000" />
+      <workItem from="1615239660927" duration="1387000" />
+      <workItem from="1615298722947" duration="5612000" />
+      <workItem from="1615406921063" duration="5355000" />
+      <workItem from="1615456339696" duration="21325000" />
+      <workItem from="1615536546367" duration="9956000" />
+      <workItem from="1615811398730" duration="1789000" />
+      <workItem from="1616018904635" duration="6306000" />
+      <workItem from="1616512879832" duration="7473000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
   <component name="WindowStateProjectService">
     <state x="610" y="309" key="#Composer" timestamp="1614775750364">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="610" y="309" key="#Composer/0.0.1600.860@0.0.1600.860" timestamp="1614775750364" />
+    <state x="254" y="85" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1615558121240">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="254" y="85" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1600.860@0.0.1600.860" timestamp="1615558121240" />
     <state x="530" y="177" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1614894790374">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="530" y="177" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1600.860@0.0.1600.860" timestamp="1614894790374" />
-    <state x="530" y="185" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1614896577766">
+    <state x="530" y="185" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1616522853082">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="530" y="185" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1600.860@0.0.1600.860" timestamp="1614896577766" />
-    <state x="602" y="289" width="440" height="315" key="FileChooserDialogImpl" timestamp="1615143547627">
+    <state x="530" y="185" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1600.860@0.0.1600.860" timestamp="1616522853082" />
+    <state x="602" y="289" width="440" height="315" key="FileChooserDialogImpl" timestamp="1615754591201">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="602" y="289" width="440" height="315" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1615143547627" />
+    <state x="602" y="289" width="440" height="315" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1615754591201" />
+    <state x="392" y="163" key="Vcs.Push.Dialog.v2" timestamp="1616533583073">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="392" y="163" key="Vcs.Push.Dialog.v2/0.0.1600.860@0.0.1600.860" timestamp="1616533583073" />
+    <state x="456" y="195" key="run.anything.popup" timestamp="1616527174657">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="456" y="195" key="run.anything.popup/0.0.1600.860@0.0.1600.860" timestamp="1616527174657" />
   </component>
 </project>

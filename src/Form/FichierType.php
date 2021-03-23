@@ -5,9 +5,11 @@ namespace App\Form;
 use App\Entity\Fichier;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Validator\Constraints\File;
 
 class FichierType extends AbstractType
 {
@@ -15,10 +17,23 @@ class FichierType extends AbstractType
     {
         $builder
             ->add('description', TextareaType::class,['attr'=>['placeholder'=>"description du fichier"]])
-            ->add('image', FileType::class,array(
-                'label'=> 'image','data_class' => null,'required' => false
-            ))
+            ->add('image', FileType::class,[
+
+                'mapped' => false,
+                'attr'=>[
+                    'class'=>"form-control-file"
+                    ],
+                'multiple'=>true,
+                'required' => false
+    ])
+
+
             ->add('dossier')
+
+           ->add('Ajouter fichier',SubmitType::class,
+           ['attr'=>['formnovalidate'=>'formnovalidate']])
+
+
         ;
     }
 

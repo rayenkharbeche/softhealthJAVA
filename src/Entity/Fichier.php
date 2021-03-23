@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\FichierRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
@@ -20,18 +22,14 @@ class Fichier
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @Assert\NotBlank(message=" entrez la description s'il vous plait !!")
      */
     private $description;
 
-    /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     * @Assert\NotBlank(message="champ obligatoire")
-     */
-    private $image;
 
     /**
      * @ORM\ManyToOne(targetEntity=Dossier::class, inversedBy="fichiers" )
-     * @Assert\NotBlank(message="champ obligatoire")
+
      */
     private $dossier;
 
@@ -52,17 +50,6 @@ class Fichier
         return $this;
     }
 
-    public function getImage(): ?string
-    {
-        return $this->image;
-    }
-
-    public function setImage(?string $image): self
-    {
-        $this->image = $image;
-
-        return $this;
-    }
 
     public function getDossier(): ?Dossier
     {
@@ -75,4 +62,8 @@ class Fichier
 
         return $this;
     }
+
+
+
+
 }
