@@ -26,19 +26,6 @@
   <component name="ChangeListManager">
     <list default="true" id="ab381145-c06b-4013-831f-8629359869b6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/services.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20210304114546.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/DossierController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/DossierController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/FichierController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/FichierController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Dossier.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Dossier.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Fichier.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Fichier.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/DossierType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/DossierType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/FichierType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/FichierType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/dossier/ShowDoc.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dossier/ShowDoc.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/dossier/create.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dossier/create.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/fichier/ShowFich.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/fichier/ShowFich.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/fichier/UpdateFich.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/fichier/UpdateFich.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/fichier/create.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/fichier/create.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -196,6 +183,7 @@
       <workItem from="1615811398730" duration="1789000" />
       <workItem from="1616018904635" duration="6306000" />
       <workItem from="1616512879832" duration="7473000" />
+      <workItem from="1616609555572" duration="694000" />
     </task>
     <servers />
   </component>
