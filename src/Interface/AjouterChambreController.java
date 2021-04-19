@@ -81,7 +81,9 @@ public class AjouterChambreController implements Initializable {
         String serv = service.getText();
         String blocc = bloc.getText();
         ServiceCategory sc = new ServiceCategory();
+        //inst t5o la valeur du nom de cate dans le box de cate deja rempli
         Category list = sc.getByNom(box_category.getValue());
+        //on va exrtai le id
         System.out.println(list.getId());
         ServiceChambre sercha = new ServiceChambre();
         Chambre t = new Chambre(numero, numetage, nbrplace, serv, blocc, list.getId());

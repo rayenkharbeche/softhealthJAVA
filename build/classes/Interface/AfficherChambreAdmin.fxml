@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="644.0" prefWidth="828.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/15.0.1" fx:controller="Interface.AfficherChambreAdminController">
+   <children>
+      <Label layoutX="169.0" layoutY="134.0" prefHeight="41.0" prefWidth="106.0" text="Recherche : " />
+      <TextField fx:id="recherche" layoutX="265.0" layoutY="142.0" />
+      <Button fx:id="supp" layoutX="581.0" layoutY="142.0" mnemonicParsing="false" onAction="#ButtonSupprimer" text="Supprimer" />
+      <TableView fx:id="tabchambre" layoutX="118.0" layoutY="222.0" prefHeight="200.0" prefWidth="539.0">
+        <columns>
+          <TableColumn fx:id="numtab" prefWidth="75.0" text="Numero" />
+          <TableColumn fx:id="etagetab" onEditCommit="#Change_Etage" prefWidth="75.0" text="Etage" />
+            <TableColumn fx:id="nbplacetab" onEditCommit="#Change_Nbplace" prefWidth="127.0" text="Nombre de place" />
+            <TableColumn fx:id="sercvicetab" onEditCommit="#Change_Service" prefWidth="87.0" text="Service" />
+            <TableColumn fx:id="bloctab" onEditCommit="#Change_Bloc" prefWidth="87.0" text="Bloc" />
+            <TableColumn fx:id="categorietab" prefWidth="87.0" text="Categorie" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
