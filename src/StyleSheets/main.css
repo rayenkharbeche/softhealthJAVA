@@ -1,0 +1,10 @@
+.background{
+    -fx-background-image : url("../Images/Doc.JPG");
+    -fx-background-repeat: stretch;
+    -fx-background-size: 100% 100%;
+
+}
+
+.imageview{
+    -fx-background-size: 100% 100%;    
+}

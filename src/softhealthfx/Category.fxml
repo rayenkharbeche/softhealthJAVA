@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="495.0" prefWidth="703.0" stylesheets="@../styles/Styles.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="softhealthfx.CategoryController">
+   <top>
+      <MenuBar prefHeight="0.0" prefWidth="1000.0" BorderPane.alignment="TOP_LEFT">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <left>
+      <VBox prefHeight="571.0" prefWidth="306.0" spacing="10.0" style="-fx-background-color: #7bc2ea;" styleClass="background" stylesheets="@../styles/Styles.css" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Add New Category" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="60.0" left="20.0" top="30.0" />
+               </VBox.margin>
+            </Label>
+            <TextField fx:id="TfId" prefHeight="30.0" prefWidth="257.0" promptText="Category ID">
+               <opaqueInsets>
+                  <Insets bottom="10.0" />
+               </opaqueInsets>
+               <VBox.margin>
+                  <Insets left="25.0" right="25.0" />
+               </VBox.margin>
+            </TextField>
+            <TextField fx:id="TfName" prefHeight="30.0" prefWidth="246.0" promptText="Category Name">
+               <VBox.margin>
+                  <Insets left="25.0" right="25.0" />
+               </VBox.margin>
+               <opaqueInsets>
+                  <Insets bottom="10.0" />
+               </opaqueInsets></TextField>
+            <HBox prefHeight="31.0" prefWidth="235.0" spacing="10.0">
+               <children>
+                  <Button fx:id="edit" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="30.0" prefWidth="75.0" style="-fx-background-color: #F0FFFF;" stylesheets="@../StyleSheets/ButtonStyle.css" text="Update" textFill="#7bc2ea">
+                     <effect>
+                        <DropShadow blurType="ONE_PASS_BOX" color="#1965d0" />
+                     </effect>
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="Insert" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#InsertCateg" prefHeight="30.0" prefWidth="75.0" style="-fx-background-color: #F0FFFF;" styleClass="btnGreen" stylesheets="@../StyleSheets/ButtonStyle.css" text="Insert" textFill="#7bc2ea">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <effect>
+                        <DropShadow blurType="ONE_PASS_BOX" color="#6468b2" />
+                     </effect>
+                  </Button>
+                  <Button fx:id="del" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="31.0" prefWidth="80.0" style="-fx-background-color: #F0FFFF;" stylesheets="@../StyleSheets/ButtonStyle.css" text="Delete" textFill="#7bc2ea">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Button>
+               </children>
+               <opaqueInsets>
+                  <Insets top="20.0" />
+               </opaqueInsets>
+               <VBox.margin>
+                  <Insets left="20.0" top="50.0" />
+               </VBox.margin>
+            </HBox>
+            <Button fx:id="reset" contentDisplay="CENTER" mnemonicParsing="false" onAction="#reset" prefHeight="31.0" prefWidth="117.0" style="-fx-background-color: #F0FFFF;" stylesheets="@../StyleSheets/ButtonStyle.css" text="Reset" textAlignment="CENTER" textFill="#7bc2ea">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="80.0" top="40.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+      </VBox>
+   </left>
+   <center>
+      <VBox alignment="TOP_RIGHT" prefHeight="470.0" prefWidth="385.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <TextField fx:id="TfSearch" prefHeight="26.0" prefWidth="152.0" promptText="Search hear!">
+                     <HBox.margin>
+                        <Insets left="20.0" right="20.0" top="25.0" />
+                     </HBox.margin>
+                  </TextField>
+                  <Button fx:id="rech" mnemonicParsing="false" onAction="#Search" prefHeight="32.0" prefWidth="105.0" text="Rechercher">
+                     <HBox.margin>
+                        <Insets right="70.0" top="20.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+            <TableView fx:id="CategTable" onMouseClicked="#handleMouseAction" prefHeight="267.0" prefWidth="382.0" stylesheets="@../StyleSheets/Table.css" tableMenuButtonVisible="true">
+              <columns>
+                <TableColumn fx:id="colCategId" maxWidth="108.0" prefWidth="108.0" text="ID" />
+                  <TableColumn fx:id="colNom" maxWidth="307.0" prefWidth="273.0" text="Nom" />
+              </columns>
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </VBox.margin>
+            </TableView>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>
