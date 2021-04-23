@@ -1,0 +1,10 @@
+tn\esprit\entities\Consultation.class
+tn\esprit\entities\User.class
+tn\esprit\pi\MainCrudUser.class
+tn\esprit\entities\Categorie.class
+tn\esprit\pi\MainCrudConsultation.class
+tn\utils\DataSource.class
+tn\esprit\services\CategorieServices.class
+tn\esprit\services\UserService.class
+tn\esprit\pi\MainCrudCategorie.class
+tn\esprit\services\ConsultationServices.class
