@@ -1,0 +1,33 @@
+.root {
+    -inner-header-color: rgb(246, 246, 246);
+    -outer-header-color: rgb(221, 221, 221);
+}
+.planning-scroll {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+}
+.planning-scroll:focused {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+}
+.planning-cell {
+    -fx-background-color: -inner-header-color;
+    -fx-background-insets: 0;
+    -fx-border-color: -outer-header-color;
+    -fx-border-width: 0.75;
+    -fx-padding: 3;
+}
+.strong-cell {
+    -fx-font-weight: bold;
+}
+.first-cell {
+    -fx-background-color: -inner-header-color;
+    -fx-background-insets: 0;
+    -fx-border-color:  -outer-header-color transparent -outer-header-color -outer-header-color;
+}
+.last-cell {
+    -fx-background-color: -inner-header-color;
+    -fx-background-insets: 0;
+    -fx-border-color: -outer-header-color -outer-header-color -outer-header-color transparent;
+}

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+<?import com.calendarfx.view.WeekDayView?>
+<?import com.calendarfx.view.page.WeekPage?>
+<?import javafx.scene.layout.AnchorPane?>
+ 
+<AnchorPane style="-fx-background-color: #328FAD;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestionplanningrendez.controllers.AgendaController">
+   <children>
+      <WeekPage fx:id="Calendrier" layoutX="-142.0" layoutY="224.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0" />
+      <WeekDayView layoutX="237.0" layoutY="-790.0" />
+   </children>
+</AnchorPane>

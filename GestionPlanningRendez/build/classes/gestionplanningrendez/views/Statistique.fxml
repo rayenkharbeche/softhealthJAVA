@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="472.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestionplanningrendez.controllers.StatistiqueController">
+   <children>
+      <BorderPane fx:id="bp" layoutX="211.0" layoutY="-3.0" prefHeight="472.0" prefWidth="790.0" />
+      <VBox prefHeight="472.0" prefWidth="211.0" style="-fx-background-color: #1156DD Swatch 4;">
+         <children>
+            <Pane prefHeight="88.0" prefWidth="137.0">
+               <children>
+                  <Label fx:id="soft" layoutX="14.0" layoutY="30.0" prefHeight="28.0" prefWidth="100.0" text="SoftHealth" textFill="WHITE">
+                     <font>
+                        <Font name="Consolas Italic" size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Button fx:id="Bhome" alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onAction="#ActionHome" prefHeight="55.0" prefWidth="136.0" style="-fx-background-color: #1156DD Swatch 4;" text="Home" textFill="WHITE">
+               <opaqueInsets>
+                  <Insets left="50.0" />
+               </opaqueInsets>
+               <font>
+                  <Font name="Berlin Sans FB Demi Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="Blist" alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onAction="#ActionListR" prefHeight="58.0" prefWidth="138.0" style="-fx-background-color: #1156DD Swatch 4;" text="List Rendez-Vous" textFill="WHITE">
+               <font>
+                  <Font name="Berlin Sans FB Demi Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="Bcalendar" alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onAction="#ActionCalendar" prefHeight="58.0" prefWidth="137.0" style="-fx-background-color: #1156DD Swatch 4;" text="Calendar" textFill="WHITE">
+               <font>
+                  <Font name="Berlin Sans FB Demi Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="Bajout" alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onAction="#ActionAjout" prefHeight="58.0" prefWidth="135.0" style="-fx-background-color: #1156DD Swatch 4;" text="Ajout Rendez-Vous" textFill="WHITE">
+               <font>
+                  <Font name="Berlin Sans FB Demi Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="stat" alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onAction="#ActionStatistique" prefHeight="58.0" prefWidth="212.0" style="-fx-background-color: #1236DD Swatch 4;" text="Statistique" textFill="WHITE">
+               <font>
+                  <Font name="Berlin Sans FB Demi Bold" size="12.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
