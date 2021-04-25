@@ -120,7 +120,7 @@ public class ServiceOrdo implements OrdoService <Ordonnance> {
         
         
         List<Ordonnance> list=new ArrayList<Ordonnance>();
-          PreparedStatement pt = cnx.prepareStatement("Select * from ordonnance");
+          PreparedStatement pt = cnx.prepareStatement("Select o.id,m.name,c.nom,co.date_C,p.nom,u.username,o.description,o.nbr_jrs,o.nbr_doses,o.nbr_fois,o.nbr_paquets from ordonnance o,medicament m,categorie c,consultation co,patient p,user u where o.medicaments_id=m.id and o.categorie_id=c.id and o.users_id=u.id and o.patient_id=p.id and o.consultation_id=co.id");
           
           
             ResultSet rs = pt.executeQuery();
@@ -128,11 +128,11 @@ public class ServiceOrdo implements OrdoService <Ordonnance> {
             while(rs.next()){
                 
                 int id = rs.getInt(1);
-                int medicaments_id = rs.getInt(2);
-                int categorie_id = rs.getInt(3);
-                int consultation_id = rs.getInt(4);
-                int patient_id = rs.getInt(5);
-                int users_id = rs.getInt(6);
+                String medicaments = rs.getString(2);
+                String categorie = rs.getString(3);
+                String consultation = rs.getString(4);
+                String patient= rs.getString(5);
+                String users= rs.getString(6);
                 String description = rs.getString(7);
                 int nbr_jrs = rs.getInt(8);
                 int nbr_doses = rs.getInt(9);
@@ -142,7 +142,7 @@ public class ServiceOrdo implements OrdoService <Ordonnance> {
 
    
                        
-             Ordonnance o = new Ordonnance( id,medicaments_id, categorie_id, consultation_id, patient_id, users_id, description, nbr_jrs, nbr_doses, nbr_fois, nbr_paquets );
+             Ordonnance o = new Ordonnance( id,medicaments, categorie, consultation, patient, users, description, nbr_jrs, nbr_doses, nbr_fois, nbr_paquets );
                 list.add(o);
             }
             return list;

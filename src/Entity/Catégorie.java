@@ -22,7 +22,7 @@ public class Catégorie {
         this.nom = nom;
     }
 
-    public long getId() {
+    public int getId() {
         return id;
     }
 

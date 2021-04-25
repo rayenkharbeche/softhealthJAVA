@@ -19,7 +19,7 @@ public interface MediServices <M>{
     public abstract void ajouter(M m) throws SQLException;
     
      public boolean supprimer(int id) throws SQLException;
-    public void modifier(M m) throws SQLException;
+    public boolean modifier(M m) throws SQLException;
     public  List<M> afficher() throws SQLException;
    
    

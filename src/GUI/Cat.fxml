@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.gluonhq.charm.glisten.control.DropdownButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SplitMenuButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="513.0" prefWidth="777.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fitHeight="513.0" fitWidth="777.0" pickOnBounds="true">
+         <image>
+            <Image url="@../Images/Doc.jpg" />
+         </image>
+      </ImageView>
+      <VBox layoutY="141.0" prefHeight="200.0" prefWidth="303.0">
+         <children>
+            <DropdownButton prefHeight="27.0" prefWidth="183.0">
+                <items>
+                    <MenuItem text="Liste Médicament" />
+                    <MenuItem text="Ajouter Médicament" />
+                    <MenuItem text="Modifier Médicament" />
+                </items>
+               <opaqueInsets>
+                  <Insets left="10.0" />
+               </opaqueInsets>
+               <padding>
+                  <Insets left="20.0" top="20.0" />
+               </padding>
+            </DropdownButton>
+            <DropdownButton layoutX="10.0" layoutY="10.0" prefHeight="27.0" prefWidth="183.0">
+               <items>
+                  <MenuItem text="Liste Ordonnance" />
+                  <MenuItem text="Ajouter Médicament" />
+                  <MenuItem text="Modifier Médicament" />
+               </items>
+               <opaqueInsets>
+                  <Insets left="10.0" />
+               </opaqueInsets>
+               <VBox.margin>
+                  <Insets left="20.0" top="50.0" />
+               </VBox.margin>
+            </DropdownButton>
+            <SplitMenuButton mnemonicParsing="false" text="SplitMenuButton">
+              <items>
+                <MenuItem mnemonicParsing="false" text="Action 1" />
+                <MenuItem mnemonicParsing="false" text="Action 2" />
+              </items>
+            </SplitMenuButton>
+         </children></VBox>
+      <HBox prefHeight="100.0" prefWidth="777.0">
+         <children>
+            <Label prefHeight="69.0" prefWidth="424.0" text="Liste des Catégories" textFill="#1a50a1">
+               <font>
+                  <Font name="System Bold Italic" size="36.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="200.0" />
+               </HBox.margin>
+            </Label>
+         </children>
+      </HBox>
+      <Label layoutY="96.0" text="Gérer Catégorie" textFill="#1a50a1">
+         <font>
+            <Font name="System Bold Italic" size="30.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

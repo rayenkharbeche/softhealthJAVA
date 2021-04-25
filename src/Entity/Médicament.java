@@ -12,8 +12,24 @@ package Entity;
  */
 
 
+
+
+
+
 public class Médicament  {
 
+      public int id;
+       private int code;
+       public String name;
+       public int categorie_id;
+       private int prix;
+       private int stock;
+       private String categorie;
+
+    
+    
+    
+    
     public String getCategorie() {
         return categorie;
     }
@@ -23,20 +39,9 @@ public class Médicament  {
     }
     
    
-       public int id;
-       private int code;
-       public String name;
-       public int categorie_id;
-       private int prix;
-       private int stock;
-       private String categorie;
-
-    public Médicament(String text, String text0, String text1, String text2, String text3) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-       
-
-    public long getId() {
+     
+  
+    public int getId() {
         return id;
     }
 
@@ -86,11 +91,20 @@ public class Médicament  {
 
     @Override
     public String toString() {
-        return "M\u00e9dicament{" + "id=" + id + ", code=" + code + ", name=" + name + ", categorie_id=" + categorie_id + ", prix=" + prix + ", stock=" + stock + '}';
+        return "M\u00e9dicament{" + "id=" + id + ", code=" + code + ", name=" + name + ", categorie_id=" + categorie + ", prix=" + prix + ", stock=" + stock + '}';
     }
 
-    public Médicament(int id, int code, String name, int prix, int stock, String categorie) {
-        this.id = id;
+    public Médicament( int code, String name, int prix, int stock, String categorie) {
+     
+        this.code = code;
+        this.name = name;
+        this.prix = prix;
+        this.stock = stock;
+        this.categorie = categorie;
+    }
+    
+     public Médicament( int code, String name, String categorie,int prix, int stock ) {
+     
         this.code = code;
         this.name = name;
         this.prix = prix;

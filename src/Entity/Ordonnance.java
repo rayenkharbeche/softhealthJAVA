@@ -22,7 +22,77 @@ private int nbr_jrs ;
 private float nbr_doses;
 private int nbr_fois;
 private int nbr_paquets;
+public String medicaments;
+public String categorie;
+public String consultation;
+public String patient;
+public String  users;
 
+    public Ordonnance(int medicaments_id, int categorie_id, int consultation_id, int patient_id, int users_id, String description, int nbr_jrs, float nbr_doses, int nbr_fois, int nbr_paquets) {
+        this.medicaments_id = medicaments_id;
+        this.categorie_id = categorie_id;
+        this.consultation_id = consultation_id;
+        this.patient_id = patient_id;
+        this.users_id = users_id;
+        this.description = description;
+        this.nbr_jrs = nbr_jrs;
+        this.nbr_doses = nbr_doses;
+        this.nbr_fois = nbr_fois;
+        this.nbr_paquets = nbr_paquets;
+    }
+ public Ordonnance(int id, String medicaments_id, String categorie_id, String consultation_id, String patient_id, String users_id, String description, int nbr_jrs, float nbr_doses, int nbr_fois, int nbr_paquets) {
+       this.id=id;
+     this.medicaments = medicaments_id;
+        this.categorie = categorie_id;
+        this.consultation = consultation_id;
+        this.patient= patient_id;
+        this.users = users_id;
+        this.description = description;
+        this.nbr_jrs = nbr_jrs;
+        this.nbr_doses = nbr_doses;
+        this.nbr_fois = nbr_fois;
+        this.nbr_paquets = nbr_paquets;
+    }
+
+    public String getMedicaments() {
+        return medicaments;
+    }
+
+    public void setMedicaments(String medicaments) {
+        this.medicaments = medicaments;
+    }
+
+    public String getCategorie() {
+        return categorie;
+    }
+
+    public void setCategorie(String categorie) {
+        this.categorie = categorie;
+    }
+
+    public String getConsultation() {
+        return consultation;
+    }
+
+    public void setConsultation(String consultation) {
+        this.consultation = consultation;
+    }
+
+    public String getPatient() {
+        return patient;
+    }
+
+    public void setPatient(String patient) {
+        this.patient = patient;
+    }
+
+    public String getUsers() {
+        return users;
+    }
+
+    public void setUsers(String users) {
+        this.users = users;
+    }
 
 
     public Ordonnance() {
@@ -135,10 +205,12 @@ private int nbr_paquets;
 
     @Override
     public String toString() {
-        return "Ordonnance{" + "id=" + id + ", medicaments_id=" + medicaments_id + ", categorie_id=" + categorie_id + ", consultation_id=" + consultation_id + ", patient_id=" + patient_id + ", users_id=" + users_id + ", description=" + description + ", nbr_jrs=" + nbr_jrs + ", nbr_doses=" + nbr_doses + ", nbr_fois=" + nbr_fois + ", nbr_paquets=" + nbr_paquets + '}';
+        return "Ordonnance{" + "id=" + id + ", medicaments=" + medicaments + ", categorie=" + categorie + ", consultation=" + consultation + ", patient=" + patient + ", users=" + users + ", description=" + description + ", nbr_jrs=" + nbr_jrs + ", nbr_doses=" + nbr_doses + ", nbr_fois=" + nbr_fois + ", nbr_paquets=" + nbr_paquets + '}';
     }
 
    
-    
+     public String toPdf() {
+        return "Ordonnance" +""+"id=" + id +"\n"+"\n"+" medicaments_id=" + medicaments_id + ", categorie_id=" + categorie_id + ", consultation_id=" + consultation_id + ", patient_id=" + patient_id+ ", users_id=" + users_id + ", description=" + description + ", nbr_jrs=" + nbr_jrs + ", nbr_doses=" + nbr_doses + ", nbr_fois=" + nbr_fois + ", nbr_paquets=" + nbr_paquets +"\n"+"\n";
+    }
     
 }

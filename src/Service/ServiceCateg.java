@@ -86,7 +86,7 @@ public class ServiceCateg implements CategServices <Catégorie> {
                 = cnx.prepareStatement("update categorie set nom= ?  where id= ?");    
        
             pst.setString(1,c.getNom());
-            pst.setLong(2,c.getId());
+            pst.setInt(2,c.getId());
 
         
           

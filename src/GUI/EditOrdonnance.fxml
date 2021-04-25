@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="add_form" prefHeight="487.0" prefWidth="1167.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.EditOrdonnanceController">
+   <children>
+      <ImageView fitHeight="487.0" fitWidth="1167.0" opacity="0.5" pickOnBounds="true">
+         <image>
+            <Image url="@../Images/Doc.jpg" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutX="349.0" layoutY="131.0" prefHeight="274.0" prefWidth="654.0">
+         <children>
+            <ComboBox fx:id="NomMed" layoutX="161.0" layoutY="31.0" prefHeight="25.0" prefWidth="141.0" />
+            <Label layoutX="21.0" layoutY="35.0" prefHeight="17.0" prefWidth="106.0" text="Nom de Médecin" textFill="#253053">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="NomPat" layoutX="161.0" layoutY="75.0" prefHeight="25.0" prefWidth="141.0" />
+            <Label layoutX="21.0" layoutY="79.0" prefHeight="17.0" prefWidth="106.0" text="Nom de Patient" textFill="#253053">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="DateCons" layoutX="161.0" layoutY="122.0" prefHeight="25.0" prefWidth="141.0" />
+            <Label layoutX="14.0" layoutY="129.0" prefHeight="19.0" prefWidth="141.0" text="Date de Consultation" textFill="#253053">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="Medic" layoutX="161.0" layoutY="169.0" prefHeight="25.0" prefWidth="141.0" />
+            <Label layoutX="36.0" layoutY="173.0" prefHeight="17.0" prefWidth="88.0" text="Médicament" textFill="#253053">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="categ" layoutX="161.0" layoutY="216.0" prefHeight="25.0" prefWidth="141.0" />
+            <Label layoutX="2.0" layoutY="219.0" prefHeight="17.0" prefWidth="166.0" text="Catégorie  Médicament" textFill="#253053">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <TextField fx:id="nbdose" layoutX="506.0" layoutY="32.0" prefHeight="25.0" prefWidth="113.0" />
+            <Label layoutX="392.0" layoutY="35.0" prefHeight="17.0" prefWidth="88.0" text="Nbr de Doses" textFill="#253053">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font></Label>
+            <TextField fx:id="nbfois" layoutX="509.0" layoutY="75.0" prefHeight="25.0" prefWidth="113.0" />
+            <Label layoutX="385.0" layoutY="78.0" prefHeight="19.0" prefWidth="113.0" text="Nbr de fois /jour" textFill="#253053">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font></Label>
+            <TextField fx:id="nbjrs" layoutX="509.0" layoutY="122.0" prefHeight="25.0" prefWidth="113.0" />
+            <Label layoutX="348.0" layoutY="125.0" prefHeight="17.0" prefWidth="148.0" text="Nbr de jrs de traitement" textFill="#253053">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font></Label>
+            <TextField fx:id="desc" layoutX="436.0" layoutY="167.0" prefHeight="32.0" prefWidth="193.0" />
+            <Label layoutX="348.0" layoutY="173.0" prefHeight="17.0" prefWidth="106.0" text="Description" textFill="#253053">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font></Label>
+            <TextField fx:id="nbpaq" layoutX="509.0" layoutY="216.0" prefHeight="25.0" prefWidth="113.0" />
+            <Label layoutX="373.0" layoutY="219.0" prefHeight="17.0" prefWidth="99.0" text="Nbr de Paquets">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font></Label>
+         </children>
+      </AnchorPane>
+      <HBox layoutX="588.0" layoutY="405.0" prefHeight="59.0" prefWidth="246.0">
+         <children>
+            <Button fx:id="Upd_btn" mnemonicParsing="false" onMouseClicked="#Edit_Ordo" prefHeight="32.0" prefWidth="89.0" text="Update">
+               <HBox.margin>
+                  <Insets left="10.0" top="10.0" />
+               </HBox.margin></Button>
+            <Button fx:id="reset" mnemonicParsing="false" onMouseClicked="#Reset" prefHeight="32.0" prefWidth="88.0" text="Reset">
+               <HBox.margin>
+                  <Insets left="60.0" top="10.0" />
+               </HBox.margin></Button>
+         </children>
+      </HBox>
+      <HBox layoutX="431.0" layoutY="33.0" prefHeight="81.0" prefWidth="560.0">
+         <children>
+            <Label prefHeight="70.0" prefWidth="540.0" text="Modifier Ordonnance" textFill="#1a50a8">
+               <font>
+                  <Font name="System Bold Italic" size="48.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <AnchorPane layoutX="6.0" layoutY="6.0" prefHeight="478.0" prefWidth="208.0" />
+      <ImageView fx:id="retour" fitHeight="50.0" fitWidth="80.0" layoutX="349.0" layoutY="410.0" onMouseClicked="#retour" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/back.png" />
+         </image>
+      </ImageView>
+      
+   </children>
+</AnchorPane>

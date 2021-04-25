@@ -72,13 +72,13 @@ public class ServiceMedic implements MediServices  <Médicament> {
     
   
   
-   public boolean supprimer(int id) throws SQLException  {
+   public boolean supprimer(int code) throws SQLException  {
        
-        String sql="delete from medicament where id= ? ";
+        String sql="delete from medicament where code= ? ";
 				
 		try {
                     pst=cnx.prepareStatement(sql);
-                    pst.setInt(1, id);
+                    pst.setInt(1, code);
                     pst.execute();
                 System.out.println("Médicament supprimé avec succé");
 			return true;
@@ -92,24 +92,25 @@ public class ServiceMedic implements MediServices  <Médicament> {
     
   
 @Override
-    public void modifier(Médicament m) throws SQLException {
-        
+    public boolean modifier(Médicament m) throws SQLException {
 
         PreparedStatement pst
                 = cnx.prepareStatement("update medicament set code= ? , name= ?, categorie_id= ? , prix= ? , stock = ?  where id= ?");    
-       
+         try {
             pst.setInt( 1,m.getCode());
             pst.setString(2,m.getName());
             pst.setInt(3,m.getCategorie_id());
             pst.setInt(4,m.getPrix());
             pst.setInt(5,m.getStock());
-           pst.setInt(6, (int) m.getId());
+            pst.setInt(6, (int) m.getId());
 
-        
-          
             pst.executeUpdate();
             System.out.println("medicament updated");
-           
+            return true;
+        } catch (SQLException ex) {
+            Logger.getLogger(ServiceMedic.class.getName()).log(Level.SEVERE, null, ex);
+            return false;
+        }
         
     }
 
@@ -118,22 +119,24 @@ public class ServiceMedic implements MediServices  <Médicament> {
         
       
         List<Médicament> list=new ArrayList<Médicament>();
-          PreparedStatement pt = cnx.prepareStatement("Select * from medicament");
+
+          PreparedStatement pt = cnx.prepareStatement("Select  m.id, m.code, m.name, cat.nom, m.prix, m.stock from medicament m join Categorie cat where m.categorie_id=cat.id");
           
           
             ResultSet rs = pt.executeQuery();
           
             while(rs.next()){
-                int id = rs.getInt(1);
+              
                 int code = rs.getInt(2);
                 String name = rs.getString(3);
-                 int categorie_id = rs.getInt(4);
+                 String categorie = rs.getString(4);
                 int prix = rs.getInt(5);
                 int stock = rs.getInt(6);
 
    
                        
-             Médicament m = new Médicament( id, code,  name, categorie_id,  prix, stock );
+             Médicament m = new Médicament( code,  name, categorie,  prix, stock );
+             
                 list.add(m);
             }
             return list;
@@ -226,7 +229,7 @@ public class ServiceMedic implements MediServices  <Médicament> {
      
     public Médicament findByCode(int code) {
         
-        String sql="Select* from medicament where code='"+code+"'";
+        String sql="Select * from medicament where code='"+code+"'";
         Médicament m=null;
          try {
             stmt=cnx.createStatement();
@@ -353,6 +356,41 @@ public class ServiceMedic implements MediServices  <Médicament> {
             }
             return list;
             }
+     
+     public Médicament getByMedic(String name) {
+          Médicament m = null;
+         String requete = " select * from medicament  where name='"+name+"'" ;
+        try {
+           
+            stmt = cnx.createStatement();
+            res=stmt.executeQuery(requete);
+            if (res.next()){
+            m = new Médicament(res.getInt(1),res.getInt(2),res.getString(3),res.getInt(4),res.getInt(5),res.getInt(6));
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(ServiceMedic.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return m ;
+        
+    }
+     
+     
+      public Médicament getById(int id) {
+          Médicament m = null;
+         String requete = " select * from medicament  where id='"+id+"'" ;
+        try {
+           
+            stmt = cnx.createStatement();
+            res=stmt.executeQuery(requete);
+            if (res.next()){
+            m = new Médicament(res.getInt(1),res.getInt(2),res.getString(3),res.getInt(4),res.getInt(5),res.getInt(6));
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(ServiceMedic.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return m ;
+        
+    }
 
     
 }

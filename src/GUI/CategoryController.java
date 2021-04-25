@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package softhealthfx;
+package GUI;
 
 import Entity.Catégorie;
 import IServices.CategServices;
@@ -36,6 +36,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -186,8 +187,7 @@ public class CategoryController implements Initializable {
         try {
                      PreparedStatement pst = cnx.prepareStatement(query);
                       pst.executeUpdate();
-                      System.out.println("catégorie supprimé avec succé");
-
+   JOptionPane.showConfirmDialog(null,"catégorie supprimé avec succé","" , JOptionPane.PLAIN_MESSAGE);
      }catch (SQLException ex) {
             System.out.println(ex.getMessage());
         }
@@ -198,15 +198,12 @@ public class CategoryController implements Initializable {
      
     @FXML
     private void reset(ActionEvent event) {
-            ClearFields();
+           TfId.clear();
+         TfName.clear();
 
     }
    
-     private void ClearFields() {
-         TfId.clear();
-         TfName.clear();
-  
-    }
+     
 
    
     @FXML
