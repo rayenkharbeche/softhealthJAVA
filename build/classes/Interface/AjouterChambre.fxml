@@ -4,22 +4,65 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="541.0" prefWidth="819.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Interface.AjouterChambreController">
+<AnchorPane id="AnchorPane" prefHeight="687.0" prefWidth="959.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Interface.AjouterChambreController">
    <children>
-      <Label layoutX="216.0" layoutY="121.0" prefHeight="37.0" prefWidth="63.0" text="Numero :" />
-      <TextField fx:id="num" layoutX="335.0" layoutY="121.0" />
-      <Label layoutX="216.0" layoutY="158.0" prefHeight="37.0" prefWidth="107.0" text="Numero Etage :" />
-      <TextField fx:id="numetage" layoutX="335.0" layoutY="158.0" />
-      <Label layoutX="216.0" layoutY="195.0" prefHeight="37.0" prefWidth="119.0" text="Nombre de place :" />
-      <TextField fx:id="nbrplace" layoutX="335.0" layoutY="195.0" />
-      <Label layoutX="216.0" layoutY="232.0" prefHeight="37.0" prefWidth="63.0" text="Service :" />
-      <TextField fx:id="service" layoutX="335.0" layoutY="232.0" />
-      <Label layoutX="216.0" layoutY="269.0" prefHeight="37.0" prefWidth="63.0" text="Bloc :" />
-      <TextField fx:id="bloc" layoutX="335.0" layoutY="269.0" />
-      <Label layoutX="216.0" layoutY="306.0" prefHeight="37.0" prefWidth="63.0" text="Categorie :" />
-      <ComboBox fx:id="box_category" layoutX="335.0" layoutY="306.0" prefWidth="150.0" />
-      <Button fx:id="btnajouter" layoutX="384.0" layoutY="376.0" mnemonicParsing="false" onAction="#ajouterchambre" text="Ajouter" />
+      <Label layoutX="156.0" layoutY="70.0" prefHeight="37.0" prefWidth="70.0" text="Numero " textFill="#141313">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <TextField fx:id="num" layoutX="152.0" layoutY="102.0" prefHeight="37.0" prefWidth="329.0" promptText="numero" />
+      <Label layoutX="161.0" layoutY="139.0" prefHeight="37.0" prefWidth="95.0" text="Numero Etage " textFill="#141313">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <TextField fx:id="numetage" layoutX="156.0" layoutY="169.0" prefHeight="37.0" prefWidth="329.0" promptText="numetage" />
+      <Label layoutX="157.0" layoutY="206.0" prefHeight="37.0" prefWidth="119.0" text="Nombre de place " textFill="#141313">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <TextField fx:id="nbrplace" layoutX="160.0" layoutY="243.0" prefHeight="37.0" prefWidth="329.0" promptText="nbrplace" />
+      <Label layoutX="160.0" layoutY="271.0" prefHeight="37.0" prefWidth="63.0" text="Service " textFill="#141313">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <TextField fx:id="service" layoutX="160.0" layoutY="308.0" prefHeight="37.0" prefWidth="329.0" promptText="service" />
+      <Label layoutX="157.0" layoutY="345.0" prefHeight="37.0" prefWidth="51.0" text="Bloc " textFill="#141313">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <TextField fx:id="bloc" layoutX="156.0" layoutY="382.0" prefHeight="37.0" prefWidth="329.0" promptText="bloc" />
+      <Label layoutX="156.0" layoutY="420.0" prefHeight="37.0" prefWidth="70.0" text="Categorie " textFill="#141313">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <ComboBox fx:id="box_category" layoutX="160.0" layoutY="457.0" prefHeight="29.0" prefWidth="218.0" />
+      <Button fx:id="btnajouter" layoutX="337.0" layoutY="636.0" mnemonicParsing="false" onAction="#ajouterchambre" prefHeight="37.0" prefWidth="82.0" style="-fx-background-color: #796AEE;" text="Ajouter" textFill="#f5f2f2" />
+      <Label layoutX="366.0" layoutY="39.0" prefHeight="37.0" prefWidth="204.0" text="Ajouter chambre " textFill="#796aee">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="61.0" fitWidth="51.0" layoutX="554.0" layoutY="89.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../pictures/bed.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="152.0" layoutY="486.0" prefHeight="37.0" prefWidth="70.0" text="Etat" textFill="#141313">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="box_etat" layoutX="156.0" layoutY="523.0" prefHeight="29.0" prefWidth="218.0" />
+      <Label layoutX="154.0" layoutY="552.0" prefHeight="37.0" prefWidth="70.0" text="Traitement" textFill="#141313">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="box_traitement" layoutX="158.0" layoutY="589.0" prefHeight="29.0" prefWidth="218.0" />
    </children>
 </AnchorPane>

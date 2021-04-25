@@ -19,7 +19,57 @@ public class Chambre  {
     private String bloc;
     private int category_id;
     private String category;
+    private String etat;
+    private String traitement;
 
+    
+
+    public Chambre(int num, int numetage, int nbrplace, String service, String bloc, int category_id, String etat, String traitement) {
+        this.num = num;
+        this.numetage = numetage;
+        this.nbrplace = nbrplace;
+        this.service = service;
+        this.bloc = bloc;
+        this.category_id = category_id;
+        this.etat = etat;
+        this.traitement = traitement;
+    }
+
+    public Chambre(int num, int numetage, int nbrplace, String service, String bloc, String category, String etat, String traitement) {
+        this.num = num;
+        this.numetage = numetage;
+        this.nbrplace = nbrplace;
+        this.service = service;
+        this.bloc = bloc;
+        this.category = category;
+        this.etat = etat;
+        this.traitement = traitement;
+    }
+
+    public Chambre(int numetage, int nbrplace, String service, String bloc, String category, String etat, String traitement) {
+        this.numetage = numetage;
+        this.nbrplace = nbrplace;
+        this.service = service;
+        this.bloc = bloc;
+        this.category = category;
+        this.etat = etat;
+        this.traitement = traitement;
+    }
+
+    public Chambre(int num, int numetage, int nbrplace, String service, String bloc, int category_id, String category, String etat, String traitement) {
+        this.num = num;
+        this.numetage = numetage;
+        this.nbrplace = nbrplace;
+        this.service = service;
+        this.bloc = bloc;
+        this.category_id = category_id;
+        this.category = category;
+        this.etat = etat;
+        this.traitement = traitement;
+    }
+    
+    
+    
     public String getCategory() {
         return category;
     }
@@ -81,26 +131,23 @@ public class Chambre  {
         this.bloc = bloc;
     }
 
-    public Chambre() {
+    public String getEtat() {
+        return etat;
     }
 
-    public Chambre(int num, int numetage, int nbrplace, String service, String bloc,int category_id) {
-        this.num = num;
-        this.numetage = numetage;
-        this.nbrplace = nbrplace;
-        this.service = service;
-        this.bloc = bloc;
-        this.category_id = category_id;
-    }
-        public Chambre(int num, int numetage, int nbrplace, String service, String bloc,String category) {
-        this.num = num;
-        this.numetage = numetage;
-        this.nbrplace = nbrplace;
-        this.service = service;
-        this.bloc = bloc;
-        this.category = category;
+    public void setEtat(String etat) {
+        this.etat = etat;
     }
 
+    public String getTraitement() {
+        return traitement;
+    }
+
+    public void setTraitement(String traitement) {
+        this.traitement = traitement;
+    }
+
+    
     @Override
     public String toString() {
         return "Chambre{" + "num=" + num + ", numetage=" + numetage + ", nbrplace=" + nbrplace + ", service=" + service + ", bloc=" + bloc + ", category_id=" + category_id + '}';

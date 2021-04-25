@@ -14,7 +14,10 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.List;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
@@ -22,6 +25,8 @@ import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.chart.BarChart;
+import javafx.scene.chart.XYChart;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -33,6 +38,8 @@ import javafx.scene.image.ImageView;
 import javafx.util.converter.IntegerStringConverter;
 import services.ServiceCategory;
 import services.ServiceChambre;
+import tray.notification.NotificationType;
+import tray.notification.TrayNotification;
 
 /**
  * FXML Controller class
@@ -56,8 +63,6 @@ public class AfficherChambreAdminController implements Initializable {
     @FXML
     private TextField recherche;
     @FXML
-    private Button supp;
-    @FXML
     private TableView<Chambre> tabchambre;
 
             
@@ -66,18 +71,42 @@ public class AfficherChambreAdminController implements Initializable {
     ServiceCategory scat = new ServiceCategory();    
     private Statement ste;
     private Connection con;
+    @FXML
+    private TableColumn<Chambre, String> etattab;
+    @FXML
+    private TableColumn<Chambre, String> traitementtab;
+    @FXML
+    private BarChart<String, Number> barChart;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        try {
+            // TODO
+
+            stat();
+        } catch (SQLException ex) {
+            Logger.getLogger(AfficherChambreAdminController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
         Aff();
         RechercheAV();
-
     }    
 
+   public void stat() throws SQLException{
+               
+       XYChart.Series<String, Number> series = new XYChart.Series<>();
+        series.setName("chambres par catégorie");
+                
+        List<Category> list = scat.afficher();
+        for (Category aux : list)
+        {
+        series.getData().add(new XYChart.Data<>(aux.getNom(), sc.calculer(String.valueOf(aux.getId()))));
+        }
+        barChart.getData().addAll(series);
+   }
    public void Aff(){
                         try {
             con = database.getInstance().getCon();
@@ -89,7 +118,16 @@ public class AfficherChambreAdminController implements Initializable {
             Category cat = new Category();
             cat = scat.getById(res.getInt(6));
             
-                Chambre f=new Chambre(res.getInt(1),res.getInt(2),res.getInt(3),res.getString(4),res.getString(5),cat.getNom());
+                Chambre f=new Chambre(res.getInt(1),res.getInt(2),res.getInt(3),res.getString(4),res.getString(5),cat.getNom(),res.getString(7),res.getString(8));
+                if(f.getTraitement().equals("Non Stérilisée"))
+                {
+                     String message = "Attentionn!!une chambre n'est pas encore sterilisée";
+                    TrayNotification tray = new TrayNotification();
+                    tray.setTitle("Traitement");
+                    tray.setMessage(message);
+                    tray.setNotificationType(NotificationType.ERROR);
+                    tray.showAndWait();
+                }
                 cls.add(f);
             }
 
@@ -104,6 +142,8 @@ public class AfficherChambreAdminController implements Initializable {
             sercvicetab.setCellValueFactory(new PropertyValueFactory<>("service"));
             bloctab.setCellValueFactory(new PropertyValueFactory<>("bloc"));
             categorietab.setCellValueFactory(new PropertyValueFactory<>("category"));
+            etattab.setCellValueFactory(new PropertyValueFactory<>("etat"));
+            traitementtab.setCellValueFactory(new PropertyValueFactory<>("traitement"));
             
             tabchambre.setItems(cls);
             tabchambre.setEditable(true);
@@ -179,7 +219,6 @@ public class AfficherChambreAdminController implements Initializable {
      sc.modifier(tab_Chambreselected);
     }
 
-    @FXML
     private void ButtonSupprimer(ActionEvent event) throws SQLException {
              
             tabchambre.setItems(cls);
@@ -193,5 +232,8 @@ public class AfficherChambreAdminController implements Initializable {
              Aff();
              RechercheAV();
     }
+    
+    
+    
     
 }

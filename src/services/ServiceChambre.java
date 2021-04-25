@@ -7,6 +7,7 @@ package services;
 
 import IServices.IService;
 import Utiles.database;
+import entites.Category;
 import entites.Chambre;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -28,12 +29,13 @@ public class ServiceChambre implements IService<Chambre> {
     public ServiceChambre() {
         cnx=database.getInstance().getCon();
     }
-    
+        ServiceCategory scat = new ServiceCategory();    
+
      @Override
 
     public void ajouter(Chambre t) throws SQLException {
-        String requete = "INSERT INTO chambre(num,  numetage,  nbrplace, service,  bloc,category_id)"
-                + "VALUES (?,?,?,?,?,?)";
+        String requete = "INSERT INTO chambre(num,  numetage,  nbrplace, service,  bloc,category_id,etat,traitement)"
+                + "VALUES (?,?,?,?,?,?,?,?)";
         try {
             PreparedStatement pst = cnx.prepareStatement(requete);
             pst.setInt(1, t.getNum());
@@ -42,6 +44,8 @@ public class ServiceChambre implements IService<Chambre> {
             pst.setString(4, t.getService());
               pst.setString(5, t.getBloc());
                pst.setInt(6, t.getCategory_id());
+               pst.setString(7, t.getEtat());
+               pst.setString(8, t.getTraitement());
             
             pst.executeUpdate();
             System.out.println("chambree ajoutee !");
@@ -64,6 +68,17 @@ public class ServiceChambre implements IService<Chambre> {
         }
     }
 
+    public void supprimer_id(int id) throws SQLException {
+           try {
+ PreparedStatement pt
+                = cnx.prepareStatement("delete from chambre where num =?");
+        pt.setInt(1, id);
+        pt.executeUpdate();
+            System.out.println("chambre Supprimée !");
+              } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+    }
         public void supprimer(int id_cat) throws SQLException {
            try {
  PreparedStatement pt
@@ -95,6 +110,24 @@ public class ServiceChambre implements IService<Chambre> {
 
     }
 
+        public void modifierChambre(Chambre t) throws SQLException {
+        try {
+            PreparedStatement pst = cnx.prepareStatement("update chambre set numetage = ?,nbrplace= ?,service=?,bloc=?,category_id=?,etat=?,traitement=? where num = ?");
+            pst.setInt(1, t.getNumetage());
+            pst.setInt(2, t.getNbrplace());
+            pst.setString(3, t.getService());
+            pst.setString(4, t.getBloc());
+            pst.setInt(5, t.getCategory_id());
+            pst.setString(6, t.getEtat());
+            pst.setString(7, t.getTraitement());
+            pst.setInt(8, t.getNum());
+            pst.executeUpdate();
+            System.out.println("chambre modifiee !");
+            } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+
+    }
     @Override
     public List<Chambre> afficher() throws SQLException {
       
@@ -110,11 +143,13 @@ public class ServiceChambre implements IService<Chambre> {
                   String bloc = rs.getString(5);
                  
                  int category_id = rs.getInt(6);
+                 String etat = rs.getString(7);
+                 String traitement = rs.getString(8);
                                 
 
                
                 
-             Chambre t = new Chambre( num, numetage,  nbrplace,  service,  bloc,category_id);
+             Chambre t = new Chambre( num, numetage,  nbrplace,  service,  bloc,category_id,etat,traitement);
                 l.add(t);
             }
             return l;
@@ -136,7 +171,13 @@ public class ServiceChambre implements IService<Chambre> {
                   String bloc = rs.getString(5);
                  
                  int category_id = rs.getInt(6);
-                  Chambre t = new Chambre( num, numetage,  nbrplace,  service,  bloc,category_id);
+                 String etat = rs.getString(7);
+                 String traitement = rs.getString(8);
+                                
+
+               
+                
+             Chambre t = new Chambre( num, numetage,  nbrplace,  service,  bloc,category_id,etat,traitement);
                 l.add(t);
             }
             return l;
@@ -157,7 +198,13 @@ public class ServiceChambre implements IService<Chambre> {
                   String bloc = rs.getString(5);
                  
                  int category_id = rs.getInt(6);
-                  Chambre t = new Chambre( num, numetage,  nbrplace,  service,  bloc,category_id);
+                 String etat = rs.getString(7);
+                 String traitement = rs.getString(8);
+                                
+
+               
+                
+             Chambre t = new Chambre( num, numetage,  nbrplace,  service,  bloc,category_id,etat,traitement);
                 l.add(t);
             }
             return l;
@@ -178,7 +225,13 @@ public class ServiceChambre implements IService<Chambre> {
                   String bloc = rs.getString(5);
                  
                  int category_id = rs.getInt(6);
-                  Chambre t = new Chambre( num, numetage,  nbrplace,  service,  bloc,category_id);
+                 String etat = rs.getString(7);
+                 String traitement = rs.getString(8);
+                                
+
+               
+                
+             Chambre t = new Chambre( num, numetage,  nbrplace,  service,  bloc,category_id,etat,traitement);
                 l.add(t);
             }
             return l;
@@ -201,7 +254,13 @@ public class ServiceChambre implements IService<Chambre> {
                   String bloc = rs.getString(5);
                  
                  int category_id = rs.getInt(6);
-                  Chambre t = new Chambre( num, numetage,  nbrplace,  service,  bloc,category_id);
+                 String etat = rs.getString(7);
+                 String traitement = rs.getString(8);
+                                
+
+               
+                
+             Chambre t = new Chambre( num, numetage,  nbrplace,  service,  bloc,category_id,etat,traitement);
                 liste.add(t);
             }
             return liste;
@@ -221,29 +280,61 @@ public class ServiceChambre implements IService<Chambre> {
                   String bloc = rs.getString(5);
                  
                  int category_id = rs.getInt(6);
-                  Chambre t = new Chambre( num, numetage,  nbrplace,  service,  bloc,category_id);
+                 String etat = rs.getString(7);
+                 String traitement = rs.getString(8);
+               
+                
+             Chambre t = new Chambre( num, numetage,  nbrplace,  service,  bloc,category_id,etat,traitement);
                 l.add(t);
             }
             return l;
             }
    
+          public Chambre getById(String id) throws SQLException {
+          Chambre a = null;
+            PreparedStatement pt = cnx.prepareStatement("select* from chambre where num='"+id+"'");
+        try {
+                       ResultSet rs = pt.executeQuery();
+
+            if (rs.next())
+            {
+                int num = rs.getInt(1);
+                int numetage = rs.getInt(2);
+                int nbrplace = rs.getInt(3);
+                String service = rs.getString(4);
+                String bloc = rs.getString(5);
+                int category_id = rs.getInt(6);
+                String etat = rs.getString(7);
+                String traitement = rs.getString(8);
+                            Category cat = new Category();
+                 cat = scat.getById(category_id);
+                 
+             a = new Chambre( num, numetage,  nbrplace,  service,  bloc,category_id,cat.getNom(),etat,traitement);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(ServiceChambre.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return a ;
         
+    }
+                  
+          
+    public int calculer(String id) {
+          int l = 0 ;
+         String requete = "SELECT COUNT(*) FROM chambre WHERE category_id="+id ;
+        try {
+           Statement st =cnx.createStatement();
+           ResultSet rs=st.executeQuery(requete);
+           if (rs.next()){
+          String chaine = String.valueOf(rs.getString(1));
+           l=Integer.parseInt(chaine);
+            System.out.println(l);}
+        } catch (SQLException ex) {
+            Logger.getLogger(ServiceChambre.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
-        
-        
-        
-        
-        
-        
-        
-            
-  
-        
-        
-        
-        
-        
-   
+      return l ;
+    }
     }
     
     

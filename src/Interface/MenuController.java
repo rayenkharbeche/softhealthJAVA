@@ -27,7 +27,7 @@ import javafx.stage.Stage;
 /**
  * FXML Controller class
  *
- * @author wajih
+ * @author Amina
  */
 public class MenuController implements Initializable {
 
@@ -107,5 +107,6 @@ public class MenuController implements Initializable {
 
     }
 
-
+   
+    
 }
