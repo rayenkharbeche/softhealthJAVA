@@ -121,7 +121,7 @@ public class AfficherChambreAdminController implements Initializable {
                 Chambre f=new Chambre(res.getInt(1),res.getInt(2),res.getInt(3),res.getString(4),res.getString(5),cat.getNom(),res.getString(7),res.getString(8));
                 if(f.getTraitement().equals("Non Stérilisée"))
                 {
-                     String message = "Attentionn!!une chambre n'est pas encore sterilisée";
+                     String message = "Attention!!La chambre " + f.getNum()+ " de l'étage " + f.getNumetage()+"n'est pas sterilisée";
                     TrayNotification tray = new TrayNotification();
                     tray.setTitle("Traitement");
                     tray.setMessage(message);

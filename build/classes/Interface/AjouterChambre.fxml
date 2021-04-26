@@ -41,7 +41,7 @@
             <Font size="14.0" />
          </font></Label>
       <ComboBox fx:id="box_category" layoutX="160.0" layoutY="457.0" prefHeight="29.0" prefWidth="218.0" />
-      <Button fx:id="btnajouter" layoutX="348.0" layoutY="636.0" mnemonicParsing="false" onAction="#ajouterchambre" prefHeight="37.0" prefWidth="82.0" style="-fx-background-color: skyblue;" text="Ajouter" textFill="#551616" />
+      <Button fx:id="btnajouter" layoutX="398.0" layoutY="585.0" mnemonicParsing="false" onAction="#ajouterchambre" prefHeight="37.0" prefWidth="82.0" style="-fx-background-color: skyblue;" text="Ajouter" textFill="#551616" />
       <Label layoutX="367.0" layoutY="33.0" prefHeight="37.0" prefWidth="204.0" text="Ajouter chambre " textFill="#5d4888">
          <font>
             <Font name="System Bold Italic" size="18.0" />
