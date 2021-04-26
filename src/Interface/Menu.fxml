@@ -14,14 +14,14 @@
    <left>
       <VBox alignment="CENTER_LEFT" prefHeight="467.0" prefWidth="158.0" style="-fx-background-color: #ffffff;" BorderPane.alignment="CENTER">
          <children>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1156dd" height="11.0" stroke="#1156dd" strokeType="INSIDE" width="200.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1156dd" height="20.0" stroke="#1156dd" strokeType="INSIDE" width="200.0" />
             <ImageView fitHeight="91.0" fitWidth="175.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../pictures/he.png" />
                </image>
             </ImageView>
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1156dd" height="60.0" stroke="#1156dd" strokeType="INSIDE" width="200.0" />
-            <Button fx:id="ajoutchambre" mnemonicParsing="false" onMouseClicked="#ajoutchambre" prefHeight="109.0" prefWidth="200.0" style="-fx-background-color: #1156DD; -fx-border-radius: 70;" text="Ajouter Chambre" textFill="#dadada">
+            <Button fx:id="ajoutchambre" mnemonicParsing="false" onMouseClicked="#ajoutchambre" prefHeight="86.0" prefWidth="200.0" style="-fx-background-color: #1156DD; -fx-border-radius: 70;" text="Ajouter Chambre" textFill="#dadada">
                <font>
                   <Font name="Berlin Sans FB Demi Bold" size="14.0" />
                </font></Button>
