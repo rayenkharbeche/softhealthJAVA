@@ -7,51 +7,49 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="bp" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Interface.MenuController">
+<BorderPane fx:id="bp" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="598.0" prefWidth="1097.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Interface.MenuController">
    <left>
-      <VBox alignment="CENTER_LEFT" prefHeight="519.0" prefWidth="192.0" style="-fx-background-color: #ffffff;" BorderPane.alignment="CENTER">
+      <VBox alignment="CENTER_LEFT" prefHeight="467.0" prefWidth="158.0" style="-fx-background-color: #ffffff;" BorderPane.alignment="CENTER">
          <children>
-            <ImageView fitHeight="98.0" fitWidth="192.0" pickOnBounds="true" preserveRatio="true">
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1156dd" height="11.0" stroke="#1156dd" strokeType="INSIDE" width="200.0" />
+            <ImageView fitHeight="91.0" fitWidth="175.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../pictures/he.png" />
                </image>
             </ImageView>
-            <Button fx:id="ajoutchambre" mnemonicParsing="false" onMouseClicked="#ajoutchambre" prefHeight="69.0" prefWidth="200.0" style="-fx-background-color: #dee2e6; -fx-border-radius: 70;" text="Ajouter Chambre" textFill="#110e0e">
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1156dd" height="60.0" stroke="#1156dd" strokeType="INSIDE" width="200.0" />
+            <Button fx:id="ajoutchambre" mnemonicParsing="false" onMouseClicked="#ajoutchambre" prefHeight="109.0" prefWidth="200.0" style="-fx-background-color: #1156DD; -fx-border-radius: 70;" text="Ajouter Chambre" textFill="#dadada">
                <font>
-                  <Font size="14.0" />
+                  <Font name="Berlin Sans FB Demi Bold" size="14.0" />
                </font></Button>
-            <Button fx:id="affchambre" mnemonicParsing="false" onMouseClicked="#interchambre" prefHeight="68.0" prefWidth="192.0" style="-fx-background-color: #aaa;" text="Afficher Chambre " textFill="#110e0e">
+            <Button fx:id="affchambre" mnemonicParsing="false" onMouseClicked="#interchambre" prefHeight="75.0" prefWidth="203.0" style="-fx-background-color: #1156DD;" text="Afficher Chambre" textFill="#dadada">
                <font>
-                  <Font size="14.0" />
+                  <Font name="Berlin Sans FB Demi Bold" size="14.0" />
                </font></Button>
-            <Button fx:id="interChambreAdmin" mnemonicParsing="false" onMouseClicked="#interchambreadmin" prefHeight="70.0" prefWidth="192.0" style="-fx-background-color: #dee2e6;" text="Afficher Chambre Admin" textFill="#110e0e">
+            <Button fx:id="interChambreAdmin" mnemonicParsing="false" onMouseClicked="#interchambreadmin" prefHeight="52.0" prefWidth="200.0" style="-fx-background-color: #1156DD;" text="Afficher Chambre Medecin" textFill="#dadada">
                <font>
-                  <Font size="14.0" />
+                  <Font name="Berlin Sans FB Demi Bold" size="14.0" />
                </font></Button>
-            <Button fx:id="ajoutcategory" mnemonicParsing="false" onMouseClicked="#ajoutcat" prefHeight="72.0" prefWidth="200.0" style="-fx-background-color: #aaa;" text="Ajouter Category" textFill="#110e0e">
+            <Button fx:id="ajoutcategory" mnemonicParsing="false" onMouseClicked="#ajoutcat" prefHeight="72.0" prefWidth="200.0" style="-fx-background-color: #1156DD;" text="Ajouter Catégorie" textFill="#dadada">
                <font>
-                  <Font size="14.0" />
+                  <Font name="Berlin Sans FB Demi Bold" size="14.0" />
                </font></Button>
-            <Button fx:id="affcategory" mnemonicParsing="false" onMouseClicked="#affcat" prefHeight="76.0" prefWidth="192.0" style="-fx-background-color: #dee2e6;" text="Afficher Category" textFill="#110e0e">
+            <Button fx:id="affcategory" mnemonicParsing="false" onMouseClicked="#affcat" prefHeight="103.0" prefWidth="200.0" style="-fx-background-color: #1156DD;" text="Afficher Catégorie" textFill="#dadada">
                <font>
-                  <Font size="14.0" />
+                  <Font name="Berlin Sans FB Demi Bold" size="14.0" />
                </font></Button>
          </children>
       </VBox>
    </left>
    <top>
-      <AnchorPane fx:id="AP" style="-fx-background-color: #343a40;" BorderPane.alignment="CENTER">
+      <AnchorPane fx:id="AP" prefHeight="82.0" prefWidth="1097.0" style="-fx-background-color: #1156DD;" BorderPane.alignment="CENTER">
          <children>
-            <Label layoutX="22.0" layoutY="21.0" prefHeight="37.0" prefWidth="36.0" text="Soft " textFill="#eeeeee">
+            <Label layoutX="21.0" layoutY="18.0" prefHeight="43.0" prefWidth="37.0" text="Soft " textFill="#eeeeee">
                <font>
                   <Font size="16.0" />
-               </font>
-            </Label>
-            <Label layoutX="50.0" layoutY="26.0" prefHeight="17.0" prefWidth="55.0" text="Health" textFill="#eee9e9">
-               <font>
-                  <Font name="System Bold" size="17.0" />
                </font>
             </Label>
             <ImageView fitHeight="25.0" fitWidth="29.0" layoutX="111.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
@@ -59,16 +57,11 @@
                   <Image url="@../pictures/hh.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="48.0" fitWidth="108.0" layoutX="787.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../pictures/notifi.PNG" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="53.0" fitWidth="83.0" layoutX="884.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../pictures/LOGOUT.PNG" />
-               </image>
-            </ImageView>
+            <Label layoutX="58.0" layoutY="12.0" prefHeight="54.0" prefWidth="55.0" text="Health" textFill="#eee9e9">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Label>
          </children></AnchorPane>
    </top>
 </BorderPane>

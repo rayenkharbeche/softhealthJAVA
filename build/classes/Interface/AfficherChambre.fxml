@@ -19,13 +19,13 @@
          <font>
             <Font size="14.0" />
          </font></Label>
-      <Label layoutX="209.0" layoutY="50.0" prefHeight="37.0" prefWidth="204.0" text="Liste des chambres" textFill="#796aee">
+      <Label layoutX="209.0" layoutY="50.0" prefHeight="37.0" prefWidth="204.0" text="Liste des chambres" textFill="#5d4888">
          <font>
             <Font name="System Bold Italic" size="18.0" />
          </font>
       </Label>
       <Accordion />
-      <Button fx:id="supp" layoutX="313.0" layoutY="138.0" mnemonicParsing="false" onAction="#delete" text="supprimer" />
+      <Button fx:id="supp" layoutX="313.0" layoutY="138.0" mnemonicParsing="false" onAction="#delete" style="-fx-background-color: #87ceeb;" text="supprimer" textFill="#551616" />
       <Label layoutX="472.0" layoutY="33.0" prefHeight="37.0" prefWidth="70.0" text="Numero " textFill="#141313">
          <font>
             <Font size="14.0" />
