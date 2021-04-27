@@ -9,9 +9,9 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" fx:id="anchorpane" prefHeight="491.0" prefWidth="977.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.OrdoController">
+<AnchorPane id="AnchorPane" fx:id="anchorpane" prefHeight="491.0" prefWidth="986.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.OrdoController">
    <children>
-      <ImageView fx:id="img" fitHeight="491.0" fitWidth="977.0" nodeOrientation="INHERIT" pickOnBounds="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <ImageView fx:id="img" fitHeight="512.0" fitWidth="997.0" nodeOrientation="INHERIT" pickOnBounds="true" AnchorPane.bottomAnchor="-21.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-11.0" AnchorPane.topAnchor="0.0">
          <image>
             <Image url="@../Images/Doc.jpg" />
          </image>
@@ -19,7 +19,7 @@
             <Rectangle2D />
          </viewport>
       </ImageView>
-      <TextField fx:id="sarch" layoutX="23.0" layoutY="41.0"  prefHeight="26.0" prefWidth="185.0" />
+      <TextField fx:id="sarch" layoutX="23.0" layoutY="41.0" prefHeight="26.0" prefWidth="185.0" />
       <Button fx:id="Convert" layoutX="295.0" layoutY="410.0" mnemonicParsing="false" onMouseClicked="#ConvertPDF" prefHeight="45.0" prefWidth="112.0" text="      Convert PDF" />
       <Button fx:id="add" layoutX="32.0" layoutY="410.0" mnemonicParsing="false" onMouseClicked="#Add_Ordonnance" prefHeight="45.0" prefWidth="112.0" text="       New " />
       <Button fx:id="List" layoutX="161.0" layoutY="410.0" mnemonicParsing="false" onAction="#update" onMouseClicked="#ShowOrdo" prefHeight="45.0" prefWidth="112.0" text="    Update" />
@@ -53,10 +53,15 @@
             <Image url="@../image/pdf.png" />
          </image>
       </ImageView>
-      <Button fx:id="search" layoutX="223.0" layoutY="42.0" mnemonicParsing="false"  onMouseClicked="#Rechercher" prefHeight="25.0" prefWidth="72.0" text="Search" />
+      <Button fx:id="search" layoutX="223.0" layoutY="42.0" mnemonicParsing="false" onMouseClicked="#Rechercher" prefHeight="25.0" prefWidth="72.0" text="Search" />
       <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="447.0" layoutY="423.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Images/delete.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="home" fitHeight="51.0" fitWidth="58.0" layoutX="899.0" layoutY="17.0" onMouseClicked="#home" pickOnBounds="true">
+         <image>
+            <Image url="@../image/3643769-building-home-house-main-menu-start_113416.png" />
          </image>
       </ImageView>
       

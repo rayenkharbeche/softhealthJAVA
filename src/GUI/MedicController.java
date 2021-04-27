@@ -10,6 +10,7 @@ import Entity.Médicament;
 import Service.ServiceCateg;
 import Service.ServiceMedic;
 import Utils.Database;
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -28,7 +29,9 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Pos;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
@@ -43,8 +46,11 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.util.Callback;
+import javafx.util.Duration;
 import javax.swing.JOptionPane;
+import org.controlsfx.control.Notifications;
 
 /**
  * FXML Controller class
@@ -93,6 +99,10 @@ public class MedicController implements Initializable {
     private Connection cnx;
     private Statement stmt;
     private PreparedStatement pst;
+    @FXML
+    private ImageView Home;
+    @FXML
+    private AnchorPane anchorpane;
 
     public MedicController() {
         Database cnx = Database.getInstance();
@@ -214,9 +224,9 @@ public class MedicController implements Initializable {
             }
             ShowMedic();
 
-           
+          
 
-        } else {
+         } else {
             Alert alert = new Alert(AlertType.INFORMATION);
             alert.setTitle("Add Médicament");
             alert.setHeaderText(null);
@@ -224,6 +234,16 @@ public class MedicController implements Initializable {
             alert.showAndWait();
 
         }
+        System.out.println("Hey you get a notification ");
+      Notifications notificationBuilder = Notifications.create()
+				.title("Notification")
+				.text("vous avez une notification ! Un nouveau médicament a ete ajoute!! ").darkStyle()
+                              
+                                .hideAfter(Duration.seconds(5))
+				.position(Pos.TOP_RIGHT);
+                
+        notificationBuilder.darkStyle();
+       notificationBuilder.show();
 
     }
 
@@ -261,6 +281,18 @@ public class MedicController implements Initializable {
             listnom.add(aux.getNom());
         }
         CbCateg.setItems(listnom);
+    }
+
+    @FXML
+    private void home(MouseEvent event) {
+           try {
+
+            AnchorPane root = FXMLLoader.load(getClass().getResource("AcceuilAsma.fxml"));
+            anchorpane.getChildren().setAll(root);
+
+        } catch (IOException ex) {
+
+        }
     }
 
 }

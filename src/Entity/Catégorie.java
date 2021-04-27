@@ -15,8 +15,14 @@ public class Catégorie {
      public String nom;
 
     public Catégorie() {
+        
     }
 
+    public Catégorie(String nom) {
+        this.nom = nom;
+    }
+
+    
     public Catégorie(int id, String nom) {
         this.id = id;
         this.nom = nom;

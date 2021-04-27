@@ -30,6 +30,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -92,6 +93,12 @@ public class EditOrdonnanceController implements Initializable {
     private Button Upd_btn;
     @FXML
     private ImageView retour;
+    @FXML
+    private Button Bhome;
+    @FXML
+    private Button listOrdonnances;
+    @FXML
+    private Button AddOrdo;
     public EditOrdonnanceController() {
             cnx=Database.getInstance().getCon();
 
@@ -271,6 +278,35 @@ public class EditOrdonnanceController implements Initializable {
 
         }
 
+    }
+
+    @FXML
+    private void Acceuil(ActionEvent event) {
+         Parent root;
+        try {
+            root = FXMLLoader.load(getClass().getResource("AcceuilAsma.fxml"));
+            add_form.getChildren().setAll(root);
+
+        } catch (IOException ex) {
+            JOptionPane.showConfirmDialog(null, ex, "", JOptionPane.ERROR_MESSAGE);
+
+        }
+    }
+
+    @FXML
+    private void ListOrdonn(ActionEvent event) {
+          Parent root;
+        try {
+            root = FXMLLoader.load(getClass().getResource("Ordo.fxml"));
+            add_form.getChildren().setAll(root);
+
+        } catch (IOException ex) {
+            JOptionPane.showConfirmDialog(null, ex, "", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+
+    @FXML
+    private void ActionModifOrdo(ActionEvent event) {
     }
     
    

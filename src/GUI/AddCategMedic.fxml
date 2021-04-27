@@ -3,8 +3,6 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -15,7 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" fx:id="anchorpane" prefHeight="513.0" prefWidth="777.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.CatController">
+<AnchorPane id="AnchorPane" fx:id="anchorpane" prefHeight="513.0" prefWidth="777.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.AddCategMedicController">
    <children>
       <ImageView fitHeight="513.0" fitWidth="1009.0" pickOnBounds="true">
          <image>
@@ -42,7 +40,7 @@
                   </Label>
                </children>
             </Pane>
-            <Button fx:id="Bhome" alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onAction="#Home" prefHeight="71.0" prefWidth="303.0" style="-fx-background-color: #1236DD Swatch 4;" text="Home" textFill="WHITE">
+            <Button fx:id="Bhome" alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onAction="#Home" prefHeight="71.0" prefWidth="303.0" style="-fx-background-color: #1236DD Swatch 4;" text="Acceuil" textFill="WHITE">
                <opaqueInsets>
                   <Insets left="50.0" />
                </opaqueInsets>
@@ -52,37 +50,50 @@
                <VBox.margin>
                   <Insets bottom="10.0" top="80.0" />
                </VBox.margin>
+               <graphic>
+                  <ImageView fitHeight="42.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/3643769-building-home-house-main-menu-start_113416.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
             </Button>
-            <Button fx:id="addcat" alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onAction="#AddCategMedic" prefHeight="58.0" prefWidth="302.0" style="-fx-background-color: #1156DD Swatch 4;" text=" Liste des Catégorie" textFill="WHITE">
+            <Button fx:id="listCat" alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onAction="#ActionListCat" prefHeight="58.0" prefWidth="302.0" style="-fx-background-color: #1156DD Swatch 4;" text=" Liste des Catégorie" textFill="WHITE">
                <font>
                   <Font name="Calibri Bold Italic" size="20.0" />
                </font>
                <VBox.margin>
                   <Insets />
                </VBox.margin>
+               <graphic>
+                  <ImageView fitHeight="42.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/menu.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
             </Button>
-            <Button fx:id="AddCateg" alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onAction="#UpdateCategMedic" prefHeight="70.0" prefWidth="302.0" style="-fx-background-color: #1236DD Swatch 4;" text="Ajouter Catégorie" textFill="WHITE">
+            <Button fx:id="AddCateg" alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onAction="#AddCategMedic" prefHeight="70.0" prefWidth="302.0" style="-fx-background-color: #1236DD Swatch 4;" text="Ajouter Catégorie" textFill="WHITE">
                <font>
                   <Font name="Calibri Bold Italic" size="20.0" />
                </font>
                <VBox.margin>
                   <Insets top="10.0" />
                </VBox.margin>
+               <graphic>
+                  <ImageView fitHeight="53.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/Edit_icon-icons.com_71853.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
             </Button>
          </children>
       </VBox>
             <BorderPane layoutX="250.0" layoutY="-13.0" prefHeight="78.0" prefWidth="759.0" style="-fx-background-color: #1156DD Swatch 4;" />
-           <TableView fx:id="CategTable" layoutX="385.0" layoutY="142.0" onMouseClicked="#handleMouseAction" prefHeight="269.0" prefWidth="216.0">
-            <columns>
-                <TableColumn fx:id="colNom" prefWidth="269.0" text="Catégories Médicaments" />
-            </columns>
-         <stylesheets>
-                       
-         </stylesheets>
-        </TableView>
-         <HBox layoutX="308.0" layoutY="65.0" prefHeight="100.0" prefWidth="599.0">
+         <HBox layoutX="424.0" layoutY="65.0" prefHeight="100.0" prefWidth="427.0">
          <children>
-            <TextField fx:id="TfSearch" prefHeight="36.0" prefWidth="378.0" promptText="Rechercher">
+            <TextField fx:id="TfSearch" prefHeight="36.0" prefWidth="391.0" promptText="Rechercher">
                <HBox.margin>
                   <Insets top="20.0" />
                </HBox.margin>
@@ -97,8 +108,22 @@
             </ImageView>
          </children>
       </HBox>
-      <Button fx:id="add" layoutX="654.0" layoutY="198.0" mnemonicParsing="false" onMouseClicked="#AddCategMedic" prefHeight="47.0" prefWidth="144.0" text="Ajouter" />
-      <Button fx:id="upd" layoutX="654.0" layoutY="277.0" mnemonicParsing="false" onMouseClicked="#UpdateCategMedic" prefHeight="47.0" prefWidth="144.0" text="Modifier" />
-      <Button fx:id="del" layoutX="654.0" layoutY="350.0" mnemonicParsing="false" onMouseClicked="#DelCategMedic" prefHeight="47.0" prefWidth="144.0" text="Supprimer" />
+      <Label layoutX="346.0" layoutY="240.0" text="Nom de Catégorie Médicament : ">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="TfName" layoutX="588.0" layoutY="233.0" prefHeight="36.0" prefWidth="189.0" promptText="Name here!" />
+      <Button fx:id="add" layoutX="777.0" layoutY="311.0" mnemonicParsing="false" onAction="#BtnAjouter" prefHeight="36.0" prefWidth="99.0" text="Ajouter" />
+      <ImageView fitHeight="21.0" fitWidth="30.0" layoutX="784.0" layoutY="319.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/ik.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="retour" fitHeight="40.0" fitWidth="80.0" layoutX="318.0" layoutY="79.0" onMouseClicked="#retour" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/back.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

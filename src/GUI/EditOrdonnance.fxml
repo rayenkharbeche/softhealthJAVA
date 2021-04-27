@@ -9,15 +9,87 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane id="AnchorPane" fx:id="add_form" prefHeight="487.0" prefWidth="1167.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.EditOrdonnanceController">
    <children>
-      <ImageView fitHeight="487.0" fitWidth="1167.0" opacity="0.5" pickOnBounds="true">
+      <ImageView fitHeight="513.0" fitWidth="1167.0" opacity="0.5" pickOnBounds="true">
          <image>
             <Image url="@../Images/Doc.jpg" />
          </image>
       </ImageView>
+       <VBox prefHeight="513.0" prefWidth="295.0" style="-fx-background-color: #1156DD Swatch 4;">
+         <children>
+             
+              <Pane prefHeight="88.0" prefWidth="137.0">
+               <children>
+                  <ImageView fitHeight="65.0" fitWidth="79.0" layoutX="9.0" layoutY="5.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../Images/Logo1.jpg" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="88.0" layoutY="8.0" prefHeight="60.0" prefWidth="200.0" text="SoftHealth" textFill="WHITE">
+                     <font>
+                        <Font name="Consolas Italic" size="25.0" />
+                     </font>
+                     <padding>
+                        <Insets left="20.0" />
+                     </padding>
+                  </Label>
+               </children>
+            </Pane>
+            <Button fx:id="Bhome" alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onAction="#Acceuil" prefHeight="71.0" prefWidth="303.0" style="-fx-background-color: #1236DD Swatch 4;" text="Acceuil" textFill="WHITE">
+               <opaqueInsets>
+                  <Insets left="50.0" />
+               </opaqueInsets>
+               <font>
+                  <Font name="Calibri Bold Italic" size="20.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="10.0" top="80.0" />
+               </VBox.margin>
+               <graphic>
+                  <ImageView fitHeight="42.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/3643769-building-home-house-main-menu-start_113416.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="listOrdonnances" alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onAction="#ListOrdonn" prefHeight="58.0" prefWidth="302.0" style="-fx-background-color: #1156DD Swatch 4;" text=" Liste des Ordonnances" textFill="WHITE">
+               <font>
+                  <Font name="Calibri Bold Italic" size="20.0" />
+               </font>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <graphic>
+                  <ImageView fitHeight="42.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/menu.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="AddOrdo" alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onAction="#ActionModifOrdo" prefHeight="70.0" prefWidth="302.0" style="-fx-background-color: #1236DD Swatch 4;" text="Ajouter  Ordonnance" textFill="WHITE">
+               <font>
+                  <Font name="Calibri Bold Italic" size="20.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+               <graphic>
+                  <ImageView fitHeight="53.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/Edit_icon-icons.com_71853.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </VBox>
       <AnchorPane layoutX="349.0" layoutY="131.0" prefHeight="274.0" prefWidth="654.0">
          <children>
             <ComboBox fx:id="NomMed" layoutX="161.0" layoutY="31.0" prefHeight="25.0" prefWidth="141.0" />

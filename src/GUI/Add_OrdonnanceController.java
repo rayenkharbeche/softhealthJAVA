@@ -26,6 +26,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -82,6 +83,12 @@ public class Add_OrdonnanceController implements Initializable {
     ObservableList<String> listCateg = FXCollections.observableArrayList();
     @FXML
     private ImageView retour;
+    @FXML
+    private Button Bhome;
+    @FXML
+    private Button listOrdonnances;
+    @FXML
+    private Button AddOrdo;
 
     /**
      * Initializes the controller class.
@@ -205,11 +212,7 @@ public class Add_OrdonnanceController implements Initializable {
 
     }
  
-    
-   
-    
-    
-    
+  
     @FXML
     private void retour(MouseEvent event) throws IOException {
 
@@ -224,5 +227,45 @@ public class Add_OrdonnanceController implements Initializable {
 
         }
 
+    }
+
+
+    @FXML
+    private void ActionModifOrdo(ActionEvent event) {
+         Parent root;
+        try {
+            root = FXMLLoader.load(getClass().getResource("Add_Ordonnance.fxml"));
+            add_form.getChildren().setAll(root);
+
+        } catch (IOException ex) {
+            JOptionPane.showConfirmDialog(null, ex, "", JOptionPane.ERROR_MESSAGE);
+
+        }
+    }
+
+    @FXML
+    private void Acceuil(ActionEvent event) {
+          Parent root;
+        try {
+            root = FXMLLoader.load(getClass().getResource("AcceuilAsma.fxml"));
+            add_form.getChildren().setAll(root);
+
+        } catch (IOException ex) {
+            JOptionPane.showConfirmDialog(null, ex, "", JOptionPane.ERROR_MESSAGE);
+
+        }
+    }
+
+    @FXML
+    private void ListOrdonn(ActionEvent event) {
+         Parent root;
+        try {
+            root = FXMLLoader.load(getClass().getResource("Ordo.fxml"));
+            add_form.getChildren().setAll(root);
+
+        } catch (IOException ex) {
+            JOptionPane.showConfirmDialog(null, ex, "", JOptionPane.ERROR_MESSAGE);
+
+        }
     }
 }
