@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" fx:id="id_affichage" prefHeight="625.0" prefWidth="876.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.141" fx:controller="tn.esprit.pifinal.ListCategoriesController">
+   <children>
+      <HBox alignment="CENTER_LEFT" layoutX="37.0" layoutY="76.0" prefHeight="42.0" prefWidth="793.0" spacing="80.0" style="-fx-background-color: #02030A;">
+         <children>
+            <Label prefHeight="27.0" prefWidth="129.0" text="    id" textFill="#e7e5e5">
+               <HBox.margin>
+                  <Insets left="50.0" />
+               </HBox.margin>
+               <font>
+                  <Font name="System Bold Italic" size="18.0" />
+               </font>
+            </Label>
+            <Label prefHeight="27.0" prefWidth="133.0" text="type_categorie" textFill="#e7e5e5">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+               <font>
+                  <Font name="System Bold Italic" size="16.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <FontAwesomeIconView glyphName="SEARCH" glyphStyle="-fx-fill:#5b0e0e" layoutX="587.0" layoutY="47.0" size="24" wrappingWidth="25.857142448425293" />
+      <JFXTextField fx:id="id_recherche" focusColor="#07102c" layoutX="625.0" layoutY="26.0" onKeyReleased="#rechercher" prefHeight="25.0" prefWidth="193.0" promptText="recherche par nom categorie..." style="-fx-background-color: #fcf6ff;" unFocusColor="#252647">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXTextField>
+      <ScrollPane layoutX="37.0" layoutY="134.0" prefHeight="383.0" prefWidth="801.0" fx:id="x">
+         <content>
+            <VBox fx:id="pnItems" prefHeight="377.0" prefWidth="790.0" style="-fx-background-color: #02030A;" />
+         </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>

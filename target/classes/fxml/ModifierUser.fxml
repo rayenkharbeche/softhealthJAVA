@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="anchorpane" prefHeight="462.0" prefWidth="967.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.pifinal.ModifierUserController">
+   <children>
+      <Label layoutX="17.0" layoutY="9.0" text="Modification Form">
+         <font>
+            <Font name="Impact" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="17.0" layoutY="39.0" text="Fill the form for updating" textFill="#a3a3a3">
+         <font>
+            <Font name="Ebrima Bold" size="14.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="cin" focusColor="#0277db" labelFloat="true" layoutX="118.0" layoutY="109.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefColumnCount="10" prefHeight="35.0" prefWidth="300.0" unFocusColor="#0277db">
+         <font>
+            <Font name="Book Antiqua" size="14.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="userName" focusColor="#0277db" labelFloat="true" layoutX="120.0" layoutY="174.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefColumnCount="10" prefHeight="35.0" prefWidth="300.0" unFocusColor="#0277db">
+         <font>
+            <Font name="Book Antiqua" size="14.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="email" focusColor="#0277db" labelFloat="true" layoutX="122.0" layoutY="234.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefColumnCount="10" prefHeight="35.0" prefWidth="300.0" unFocusColor="#0277db">
+         <font>
+            <Font name="Book Antiqua" size="14.0" />
+         </font>
+      </JFXTextField>
+      <JFXPasswordField fx:id="tf_password" focusColor="#0277db" labelFloat="true" layoutX="603.0" layoutY="107.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefColumnCount="10" prefHeight="35.0" prefWidth="300.0" unFocusColor="#0277db">
+         <font>
+            <Font name="Book Antiqua" size="14.0" />
+         </font>
+      </JFXPasswordField>
+      <Label layoutX="28.0" layoutY="129.0" text="CIN            :" textFill="#0277db">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="24.0" layoutY="187.0" text="Username  :" textFill="#0277db">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="25.0" layoutY="246.0" text="Email         :" textFill="#0277db">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="497.0" layoutY="126.0" text="Password  :" textFill="#0277db">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="501.0" layoutY="187.0" text="Role         :" textFill="#0277db">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <JFXComboBox fx:id="id_role" focusColor="#0277db" layoutX="603.0" layoutY="184.0" prefHeight="31.0" prefWidth="300.0" unFocusColor="#0277db" />
+      <JFXButton fx:id="btn_update" buttonType="RAISED" layoutX="315.0" layoutY="359.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#update" prefHeight="50.0" prefWidth="300.0" ripplerFill="#0277db" styleClass="loginBtn1" stylesheets="@../styles/stylesheet.css" text="Update">
+         <font>
+            <Font name="Ebrima Bold" size="16.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>

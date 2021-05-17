@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import java.lang.String?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="content_add_category" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.pifinal.ModifierCategorieController">
+   <children>
+      <Label layoutX="31.0" layoutY="28.0" text="Edit Category">
+         <font>
+            <Font name="Impact" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="31.0" layoutY="58.0" text="Fill the form for editing a category" textFill="#a3a3a3">
+         <font>
+            <Font name="Ebrima Bold" size="14.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="tf_category" focusColor="#0277db" labelFloat="true" layoutX="136.0" layoutY="131.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefColumnCount="10" prefHeight="35.0" prefWidth="300.0" unFocusColor="#0277db">
+         <font>
+            <Font name="Book Antiqua Bold" size="15.0" />
+         </font>
+      </JFXTextField>
+      <JFXButton fx:id="btn_update_category" buttonType="RAISED" layoutX="126.0" layoutY="256.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#modifier_category" prefHeight="50.0" prefWidth="300.0" ripplerFill="#0722ff" stylesheets="@../styles/stylesheet.css" text="Update Category">
+         <font>
+            <Font name="Ebrima Bold" size="16.0" />
+         </font>
+         <styleClass>
+            <String fx:value="loginBtn" />
+            <String fx:value="loginBtn1" />
+         </styleClass>
+      </JFXButton>
+      <Label layoutX="48.0" layoutY="149.0" text="Type :" textFill="#0277db">
+         <font>
+            <Font name="Book Antiqua Bold" size="16.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

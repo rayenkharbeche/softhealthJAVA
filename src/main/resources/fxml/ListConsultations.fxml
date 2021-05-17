@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="id_affichage" prefHeight="590.0" prefWidth="919.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.pifinal.ListConsultationsController">
+   <children>
+      <HBox alignment="CENTER_LEFT" layoutX="15.0" layoutY="58.0" prefHeight="42.0" prefWidth="835.0" spacing="80.0" style="-fx-background-color: #02030A;">
+         <children>
+            <Label prefHeight="27.0" prefWidth="75.0" text="patient" textFill="#e7e5e5">
+               <HBox.margin>
+                  <Insets left="50.0" />
+               </HBox.margin>
+               <font>
+                  <Font name="System Bold Italic" size="18.0" />
+               </font>
+            </Label>
+            <Label prefHeight="27.0" prefWidth="73.0" text="categorie" textFill="#e7e5e5">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+               <font>
+                  <Font name="System Bold Italic" size="16.0" />
+               </font>
+            </Label>
+            <Label text="titre" textFill="#e7e5e5">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+               <font>
+                  <Font name="System Bold Italic" size="17.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <Label layoutX="23.0" layoutY="14.0" prefHeight="27.0" prefWidth="135.0" text="Filtrer par patient:" textFill="#0277db">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font>
+      </Label>
+      <JFXComboBox fx:id="id_patient" focusColor="#0277db" layoutX="171.0" layoutY="15.0" onAction="#afficherbypatient" prefHeight="25.0" prefWidth="172.0" unFocusColor="#0277db" />
+      <FontAwesomeIconView glyphName="SEARCH" glyphStyle="-fx-fill:#0277db" layoutX="526.0" layoutY="36.0" size="24" wrappingWidth="25.857142448425293" />
+      <JFXTextField fx:id="id_recherche" focusColor="#07102c" layoutX="564.0" layoutY="15.0" onKeyReleased="#rechercher" prefHeight="25.0" prefWidth="193.0" promptText="recherche par titre..." style="-fx-background-color: #fcf6ff;" unFocusColor="#252647">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXTextField>
+      <Label layoutX="23.0" layoutY="534.0" prefHeight="27.0" prefWidth="66.0" text="Trier par  :" textFill="#0277db">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font>
+      </Label>
+      <JFXCheckBox fx:id="id_nbre" layoutX="140.0" layoutY="537.0" onAction="#trier_par_nbre" text="Nbre de vu" />
+      <JFXCheckBox fx:id="id_date" layoutX="323.0" layoutY="537.0" onAction="#trier_par_date" text="Date de création" />
+      <ScrollPane layoutX="11.0" layoutY="109.0" prefHeight="406.0" prefWidth="843.0" fx:id="x">
+         <content>
+            <VBox fx:id="pnItems" prefHeight="401.0" prefWidth="844.0">
+               <children>
+                  <VBox fx:id="pnItems1" prefHeight="403.0" prefWidth="856.0" style="-fx-background-color: #02030A;" />
+               </children></VBox>
+         </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>
