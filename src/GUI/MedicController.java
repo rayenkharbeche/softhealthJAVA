@@ -216,7 +216,7 @@ public class MedicController implements Initializable {
 
             PreparedStatement pst = cnx.prepareStatement(query);
             pst.executeUpdate();
-            JOptionPane.showConfirmDialog(null, "Médicament édité avec succé", "", JOptionPane.PLAIN_MESSAGE);
+            JOptionPane.showConfirmDialog(null, "Médicament Ajouté avec succé", "", JOptionPane.PLAIN_MESSAGE);
 
         } catch (SQLException ex) {
             JOptionPane.showConfirmDialog(null, ex, "", JOptionPane.ERROR_MESSAGE);
@@ -239,7 +239,7 @@ public class MedicController implements Initializable {
 				.title("Notification")
 				.text("vous avez une notification ! Un nouveau médicament a ete ajoute!! ").darkStyle()
                               
-                                .hideAfter(Duration.seconds(5))
+                                .hideAfter(Duration.seconds(8))
 				.position(Pos.TOP_RIGHT);
                 
         notificationBuilder.darkStyle();

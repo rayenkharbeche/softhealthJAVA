@@ -99,6 +99,7 @@ public class EditOrdonnanceController implements Initializable {
     private Button listOrdonnances;
     @FXML
     private Button AddOrdo;
+    
     public EditOrdonnanceController() {
             cnx=Database.getInstance().getCon();
 

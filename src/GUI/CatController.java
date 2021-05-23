@@ -30,6 +30,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javax.swing.JOptionPane;
@@ -67,6 +68,9 @@ public class CatController implements Initializable {
     public static Catégorie cat;
     @FXML
     private Button addcat;
+    
+        private ObservableList<Catégorie> fichData = FXCollections.observableArrayList();
+
 
     /**
      * Initializes the controller class.
@@ -170,26 +174,15 @@ public class CatController implements Initializable {
         ShowCateg();
     }
 
-    @FXML
-    private void AddCategMedic(ActionEvent event) {
-          try {
+    
 
-            AnchorPane root = FXMLLoader.load(getClass().getResource("AddCategMedic.fxml"));
-            anchorpane.getChildren().setAll(root);
-
-        } catch (IOException ex) {
-
-        }
-    }
-
-    @FXML
     private void UpdateCategMedic(ActionEvent event) {
           Catégorie c = CategTable.getSelectionModel().getSelectedItem();
         
         cat = c;
            Parent root;
         try {
-            root = FXMLLoader.load(getClass().getResource("ModifCategMedic.fxml"));
+            root = FXMLLoader.load(getClass().getResource("EditCategMedic.fxml"));
             anchorpane.getChildren().setAll(root);
 
         } catch (IOException ex) {
@@ -227,4 +220,59 @@ public class CatController implements Initializable {
     }
 
 
-}
+    @FXML
+    private void Recherche(KeyEvent event) {
+          
+            FilteredList<Catégorie> filteredData = new FilteredList<>(fichData, b -> true);
+
+            TfSearch.textProperty().addListener((observable, oldValue, newValue) -> {
+                filteredData.setPredicate(cat -> {
+
+                    if (newValue == null || newValue.isEmpty()) {
+                        return true;
+                    }
+                    String lowerCaseFilter = newValue.toLowerCase();
+
+                    if (cat.getNom().toLowerCase().indexOf(lowerCaseFilter) != -1) {
+                        return true;
+            
+
+                    } else {
+                        return false;
+                    }
+                });
+            });
+
+            SortedList<Catégorie> sortedData = new SortedList<>(filteredData);
+            sortedData.comparatorProperty().bind(CategTable.comparatorProperty());
+            CategTable.setItems(sortedData);
+
+        } 
+
+    @FXML
+    private void ListeCategMedic(ActionEvent event) {
+         try {
+
+            AnchorPane root = FXMLLoader.load(getClass().getResource("Cat.fxml"));
+            anchorpane.getChildren().setAll(root);
+
+        } catch (IOException ex) {
+
+        }
+    }
+
+    @FXML
+    private void AjouterCategMedic(ActionEvent event) {
+         try {
+
+            AnchorPane root = FXMLLoader.load(getClass().getResource("AddCategMedic.fxml"));
+            anchorpane.getChildren().setAll(root);
+
+        } catch (IOException ex) {
+
+        }
+    }
+
+    }
+
+
